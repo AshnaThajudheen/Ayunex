@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AYUNEX - Menu</title>
+  <link rel="icon" type="image/png" href="favicon.png" /> <!-- Favicon line added -->
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0b1d0f, #132d1a);
+      color: #a3ffcb;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: #00271d;
+      padding: 1rem 2rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #90ee90;
+      text-decoration: none;
+    }
+
+    main {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 3rem 1rem 6rem 1rem;
+    }
+
+    .menu-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 350px;
+      width: 100%;
+    }
+
+    .menu-title {
+      font-size: 2.3rem;
+      margin-bottom: 2rem;
+      color: #90ee90;
+      text-align: center;
+    }
+
+    .menu-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      width: 100%;
+    }
+
+    .menu-link {
+      background: rgba(163, 255, 203, 0.07);
+      padding: 1.2rem 1.5rem;
+      border: 1px solid #1f3c28;
+      border-radius: 16px;
+      font-size: 1.2rem;
+      color: #b3ffdc;
+      text-decoration: none;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .menu-link:hover {
+      background: rgba(163, 255, 203, 0.15);
+      transform: scale(1.03);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      color: #88aa88;
+      background: #002b1a;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      .menu-title {
+        font-size: 2rem;
+      }
+
+      .menu-link {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo">AYUNEX</a>
+  </header>
+
+  <main>
+    <div class="menu-wrapper">
+      <h1 class="menu-title">EXPLORE AYUNEX</h1>
+      <div class="menu-container">
+        <a href="home.html" class="menu-link">🏠 Home</a>
+        <a href="technology.html" class="menu-link">🛠️ Technology</a>
+        <a href="features.html" class="menu-link">✨ Features</a>
+        <a href="videos.html" class="menu-link">📹 Videos</a>
+        <a href="contact.html" class="menu-link">📞 Contact</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 AYUNEX - Unified AI-Enhanced Elderly Monitoring System
+  </footer>
+</body>
+</html>

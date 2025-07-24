@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Videos - Ayunex</title>
+  <link rel="icon" type="image/png" href="favicon.png" /> <!-- Favicon line added -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(-45deg, #0b1d0f, #003322, #0e2a1a, #001b14);
+      background-size: 400% 400%;
+      animation: gradientFlow 15s ease infinite;
+      color: #d2ffeb;
+      min-height: 100vh;
+    }
+
+    @keyframes gradientFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header {
+      background: #00271d;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #90ee90;
+      text-decoration: none;
+    }
+
+    nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: #caffd3;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #90ee90;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #a3ffcb;
+    }
+
+    video {
+      width: 100%;
+      max-height: 500px;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      color: #88aa88;
+      background: #002b1a;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="logo">Ayunex</a>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="features.html">Features</a>
+      <a href="technology.html">Technology</a>
+      <a href="videos.html">Videos</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>📹 Project Demonstration</h1>
+    <video controls>
+      <source src="video.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <footer>
+    &copy; 2025 Ayunex - Unified AI-Enhanced Elderly Monitoring System. All rights reserved.
+  </footer>
+
+</body>
+</html>

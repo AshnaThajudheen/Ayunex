@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Technology - Ayunex</title>
+  <link rel="icon" type="image/png" href="favicon.png" /> <!-- Favicon line added -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(-45deg, #0b1d0f, #003322, #0e2a1a, #001b14);
+      background-size: 400% 400%;
+      animation: gradientWave 15s ease infinite;
+      color: #d2ffeb;
+      min-height: 100vh;
+    }
+
+    @keyframes gradientWave {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header {
+      background: #00271d;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #90ee90;
+      text-decoration: none;
+    }
+
+    nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: #caffd3;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #90ee90;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    .hero-card {
+      background: rgba(163, 255, 203, 0.07);
+      padding: 2.5rem;
+      border-radius: 16px;
+      margin-bottom: 3rem;
+      box-shadow: 0 6px 18px rgba(0, 64, 32, 0.3);
+      text-align: center;
+    }
+
+    .hero-card h1 {
+      font-size: 2.5rem;
+      color: #a3ffcb;
+      margin-bottom: 1rem;
+    }
+
+    .hero-card p {
+      font-size: 1.2rem;
+      color: #cdeed6;
+    }
+
+    .tech-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .tech-category {
+      background: rgba(0, 50, 30, 0.3);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 6px 20px rgba(0, 64, 32, 0.3);
+    }
+
+    .tech-category h2 {
+      margin-bottom: 1rem;
+      color: #b8ffcf;
+      text-align: center;
+    }
+
+    .tech-list {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .tech-item {
+      background: linear-gradient(to right, #005533, #004422);
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .tech-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .tech-item p {
+      margin: 0;
+      color: #d0ffd0;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      color: #88aa88;
+      background: #002b1a;
+    }
+
+    @media (max-width: 600px) {
+      .hero-card h1 {
+        font-size: 2rem;
+      }
+
+      .hero-card p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="logo">Ayunex</a>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="features.html">Features</a>
+      <a href="technology.html">Technology</a>
+      <a href="videos.html">Videos</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="hero-card">
+      <h1>Advanced Technology Stack</h1>
+      <p>Cutting-edge integration of IoT sensors, AI algorithms, and cloud computing for comprehensive elderly monitoring.</p>
+    </div>
+
+    <div class="tech-section">
+      <div class="tech-category">
+        <h2>🔧 Hardware Components</h2>
+        <div class="tech-list">
+          <div class="tech-item"><p>ESP32 - Main microcontroller with Wi-Fi & Bluetooth</p></div>
+          <div class="tech-item"><p>MAX30102 - Heart rate & SpO2 sensor</p></div>
+          <div class="tech-item"><p>DS18B20 - Digital temperature sensor</p></div>
+          <div class="tech-item"><p>SIM800L - GSM/GPRS communication module</p></div>
+          <div class="tech-item"><p>Raspberry Pi 4 - AI processing unit</p></div>
+          <div class="tech-item"><p>ESP32-CAM - Camera module with Wi-Fi</p></div>
+          <div class="tech-item"><p>3.7V Li-ion battery with TP4056 charging</p></div>
+        </div>
+      </div>
+
+      <div class="tech-category">
+        <h2>🧠 AI & Machine Learning</h2>
+        <div class="tech-list">
+          <div class="tech-item"><p>OpenCV - Computer vision library</p></div>
+          <div class="tech-item"><p>MediaPipe - Face & pose detection framework</p></div>
+          <div class="tech-item"><p>TensorFlow Lite - On-device ML inference</p></div>
+          <div class="tech-item"><p>Scikit-learn - Anomaly detection algorithms</p></div>
+          <div class="tech-item"><p>Custom CNN - Emotion recognition models</p></div>
+          <div class="tech-item"><p>FER-2013 dataset - Facial expression training</p></div>
+          <div class="tech-item"><p>YOLO - Real-time object detection</p></div>
+        </div>
+      </div>
+
+      <div class="tech-category">
+        <h2>☁️ Cloud & Connectivity</h2>
+        <div class="tech-list">
+          <div class="tech-item"><p>Firebase - Real-time database & hosting</p></div>
+          <div class="tech-item"><p>ThingSpeak - IoT data analytics platform</p></div>
+          <div class="tech-item"><p>IFTTT - Automation & integration platform</p></div>
+          <div class="tech-item"><p>Twilio - SMS & communication services</p></div>
+          <div class="tech-item"><p>Wi-Fi 802.11b/g/n - Primary connectivity</p></div>
+          <div class="tech-item"><p>GSM/GPRS - Backup communication</p></div>
+          <div class="tech-item"><p>MQTT - Low-latency messaging protocol</p></div>
+        </div>
+      </div>
+
+      <div class="tech-category">
+        <h2>💻 Software Development</h2>
+        <div class="tech-list">
+          <div class="tech-item"><p>Arduino IDE - ESP32 firmware development</p></div>
+          <div class="tech-item"><p>Python 3.8+ - AI/ML model development</p></div>
+          <div class="tech-item"><p>JavaScript/Node.js - Web dashboard</p></div>
+          <div class="tech-item"><p>HTML5/CSS3 - User interface design</p></div>
+          <div class="tech-item"><p>Firebase Functions - Serverless backend</p></div>
+          <div class="tech-item"><p>pyttsx3 - Text-to-speech synthesis</p></div>
+          <div class="tech-item"><p>Flask/FastAPI - REST API development</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Ayunex - Unified AI-Enhanced Elderly Monitoring System. All rights reserved.
+  </footer>
+
+</body>
+</html>

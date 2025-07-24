@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ayunex - Home</title>
+  <link rel="icon" type="image/png" href="favicon.png" /> <!-- Favicon line added -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(-45deg, #0b1d0f, #003322, #0e2a1a, #001b14);
+      background-size: 400% 400%;
+      animation: gradientFlow 15s ease infinite;
+      color: #d2ffeb;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    @keyframes gradientFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header {
+      background: #00271d;
+      padding: 1.2rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #90ee90;
+      text-decoration: none;
+    }
+
+    nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: #caffd3;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #90ee90;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 6rem 2rem 4rem;
+    }
+
+    .hero h1 {
+      font-size: 3.2rem;
+      color: #a3ffcb;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      max-width: 800px;
+      margin: 0 auto;
+      color: #cdeed6;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      padding: 4rem 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .feature-card {
+      background: rgba(163, 255, 203, 0.07);
+      padding: 2rem;
+      border-radius: 16px;
+      border: 1px solid #1f3c28;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    }
+
+    .feature-card h3 {
+      color: #b7ffbf;
+      margin-bottom: 1rem;
+    }
+
+    .feature-card p {
+      color: #e0fbe7;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      color: #88aa88;
+      background: #002b1a;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .hero p {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <a href="index.html" class="logo">Ayunex</a>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="features.html">Features</a>
+      <a href="technology.html">Technology</a>
+      <a href="videos.html">Videos</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Welcome to Ayunex</h1>
+    <p>Unified AI-Enhanced Elderly Monitoring System ensuring safety, awareness, and real-time insights using smart sensors and intelligent vision analysis.</p>
+  </section>
+
+  <!-- Features -->
+  <section class="features">
+    <div class="feature-card">
+      <h3>❤️ Real-Time Vitals</h3>
+      <p>Track heart rate, SpO2, and body temperature via wearable sensors.</p>
+    </div>
+    <div class="feature-card">
+      <h3>🧠 Facial AI Analysis</h3>
+      <p>Detect pain, drowsiness, and expressions with smart emotion recognition.</p>
+    </div>
+    <div class="feature-card">
+      <h3>🚨 Fall Detection</h3>
+      <p>Identify falls using AI pose monitoring and send alerts instantly.</p>
+    </div>
+    <div class="feature-card">
+      <h3>☁️ Cloud Dashboards</h3>
+      <p>Access live vitals and behavior analytics using Firebase or ThingSpeak.</p>
+    </div>
+    <div class="feature-card">
+      <h3>📲 Instant Alerts</h3>
+      <p>Automated SMS, Email, and GSM triggers on critical events.</p>
+    </div>
+    <div class="feature-card">
+      <h3>🔗 Dual Device Setup</h3>
+      <p>Combines wearable monitoring + room surveillance for total care.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Ayunex - Unified AI-Enhanced Elderly Monitoring System. All rights reserved.
+  </footer>
+
+</body>
+</html>
