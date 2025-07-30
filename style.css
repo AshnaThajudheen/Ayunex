@@ -143,3 +143,15 @@ footer {
   margin: 1rem auto 2rem; /* reduce top margin */
   padding: 1rem 2rem;
 }
+.gallery {
+  justify-items: center; /* ✅ center items in grid */
+}
+.media-item img {
+  width: 100%;
+  max-width: 300px;
+  height: auto; /* ✅ Maintain aspect ratio */
+  object-fit: contain; /* Or "cover" if cropping is okay */
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}

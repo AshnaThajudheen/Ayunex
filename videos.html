@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Videos - Ayunex</title>
-  <link rel="icon" type="image/png" href="favicon.png" /> <!-- Favicon line added -->
+  <link rel="icon" type="image/png" href="favicon.png" />
   <style>
     * {
       margin: 0;
@@ -57,7 +57,7 @@
     }
 
     .container {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 0 auto;
       padding: 4rem 2rem;
       text-align: center;
@@ -69,11 +69,63 @@
       color: #a3ffcb;
     }
 
-    video {
-      width: 100%;
-      max-height: 500px;
+    .card-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .card {
+      background: #004d36;
+      padding: 2rem;
       border-radius: 16px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+      width: 220px;
+      cursor: pointer;
+      transition: transform 0.3s ease, background 0.3s;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      background: #007153;
+    }
+
+    .card-title {
+      font-size: 1.3rem;
+      color: #e3ffe3;
+    }
+
+    .gallery {
+      display: none;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .gallery.active {
+      display: grid;
+      opacity: 1;
+    }
+
+    .media-item video,
+    .media-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      display: block;
+    }
+
+    .media-item:hover video,
+    .media-item:hover img {
+      transform: scale(1.03);
     }
 
     footer {
@@ -81,11 +133,21 @@
       padding: 1.5rem;
       color: #88aa88;
       background: #002b1a;
+      margin-top: 4rem;
     }
 
     @media (max-width: 600px) {
       h1 {
         font-size: 2rem;
+      }
+
+      .card {
+        width: 80%;
+      }
+
+      .media-item video,
+      .media-item img {
+        height: 180px;
       }
     }
   </style>
@@ -105,16 +167,101 @@
   </header>
 
   <div class="container">
-    <h1>📹 Project Demonstration</h1>
-    <video controls>
-      <source src="video.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
+    <h1>🎞️ Media Gallery</h1>
+
+    <div class="card-group">
+      <div class="card" onclick="toggleGallery('videoGallery')">
+        <div class="card-title">🎬 Videos</div>
+      </div>
+      <div class="card" onclick="toggleGallery('photoGallery')">
+        <div class="card-title">📷 Photos</div>
+      </div>
+    </div>
+
+    <!-- Video Album -->
+    <div id="videoGallery" class="gallery">
+      <div class="media-item">
+        <video controls>
+          <source src="video.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="media-item">
+        <video controls>
+          <source src="video1.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="media-item">
+        <video controls>
+          <source src="video2.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <!-- Photo Album -->
+    <div id="photoGallery" class="gallery">
+      <div class="media-item">
+        <img src="photo1.jpg" alt="Photo 1">
+      </div>
+     <div class="media-item">
+        <img src="photo2.jpg" alt="Photo 1">
+      </div> 
+    </div>
   </div>
 
   <footer>
     &copy; 2025 Ayunex - Unified AI-Enhanced Elderly Monitoring System. All rights reserved.
   </footer>
 
+  <script>
+    function toggleGallery(id) {
+      const galleries = document.querySelectorAll('.gallery');
+      galleries.forEach(g => {
+        g.classList.remove('active');
+        g.scrollTop = 0;
+      });
+      const selected = document.getElementById(id);
+      selected.classList.add('active');
+      selected.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const videos = document.querySelectorAll("#videoGallery video");
+
+      videos.forEach((video, index) => {
+        video.addEventListener("click", () => {
+          if (video.requestFullscreen) video.requestFullscreen();
+          else if (video.webkitRequestFullscreen) video.webkitRequestFullscreen();
+          else if (video.msRequestFullscreen) video.msRequestFullscreen();
+          video.play();
+        });
+
+        video.addEventListener("ended", () => {
+          if (document.exitFullscreen) document.exitFullscreen();
+          else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+          else if (document.msExitFullscreen) document.msExitFullscreen();
+
+          const next = videos[index + 1];
+          if (next) {
+            setTimeout(() => {
+              if (next.requestFullscreen) next.requestFullscreen();
+              else if (next.webkitRequestFullscreen) next.webkitRequestFullscreen();
+              else if (next.msRequestFullscreen) next.msRequestFullscreen();
+              next.play();
+            }, 500);
+          }
+        });
+      });
+
+      // Fullscreen for images
+      const images = document.querySelectorAll("#photoGallery img");
+      images.forEach((img) => {
+        img.addEventListener("click", () => {
+          if (img.requestFullscreen) img.requestFullscreen();
+          else if (img.webkitRequestFullscreen) img.webkitRequestFullscreen();
+          else if (img.msRequestFullscreen) img.msRequestFullscreen();
+        });
+      });
+    });
+  </script>
 </body>
 </html>
